@@ -19,7 +19,7 @@ public class ProjectConfig {
 
 	@Bean(name = PREFIX + "appDao")
 	public ModelObjectDao<App> generateAppDao() {
-		return new BaseDaoImpl<App>();
+		return new BaseDaoImpl<App>(App.class);
 	}
 
 }

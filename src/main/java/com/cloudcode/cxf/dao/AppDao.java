@@ -1,5 +1,7 @@
 package com.cloudcode.cxf.dao;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 
@@ -27,5 +29,8 @@ public class AppDao extends BaseModelObjectDao<App> {
 		}
 		appDao.createObject(entity);
 	}
-	
+	public List<App> loadAppAll() {
+		List<App> list = appDao.loadAll();
+		return list;
+	}
 }

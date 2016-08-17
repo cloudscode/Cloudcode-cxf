@@ -6,7 +6,7 @@ import org.apache.cxf.endpoint.dynamic.DynamicClientFactory;
 public class appClientTest {
 
 	public static void main(String[] args) {
-		String wsdlUrl="http://localhost:8080/com.cloudcode/cxfService/appClient?wsdl";
+		String wsdlUrl="http://localhost:8082/cloudcode/cxfService/appClient?wsdl";
 		 DynamicClientFactory dcf = DynamicClientFactory.newInstance();
 		 Client client = dcf.createClient(wsdlUrl);
 		Object[] objects;
