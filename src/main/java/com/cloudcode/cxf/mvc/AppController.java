@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.cloudcode.cxf.dao.AppDao;
 import com.cloudcode.cxf.model.App;
@@ -25,5 +26,10 @@ public class AppController extends CrudController<App> {
 	public @ResponseBody void test(@ModelAttribute  @Valid App app, HttpServletRequest request) {
 		appDao.loadAppAll();
 	}
-	
+	@RequestMapping(value = "create")
+	public ModelAndView create() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("classpath:com/cloudcode/cxf/ftl/detail.ftl");
+		return modelAndView;
+	}
 }
