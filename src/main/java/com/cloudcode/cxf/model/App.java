@@ -1,7 +1,9 @@
 package com.cloudcode.cxf.model;
 
-import com.cloudcode.framework.model.BaseModelObject;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.cloudcode.framework.model.BaseModelObject;
+@Document(collection = "App")
 public class App extends BaseModelObject {
 	private String name;
 
